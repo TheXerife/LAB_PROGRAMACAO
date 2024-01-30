@@ -1,13 +1,13 @@
 print("Hello Word")
 
+# ________Passo 01 ________
 
+# git add Aula01.py     
 
+# ________ Passo 02 ________
+     
+# git commit -m "Criação e Alteração"    
 
+# ________ Passo 03 ________
 
-# git add Aula01.py 1            (
-# git commit -m "Criação e Alteração" 2   (
-# git push            (
-# git pull            (
-# 
-#
-#
+# git push     
