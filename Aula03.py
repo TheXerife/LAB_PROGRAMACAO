@@ -1,37 +1,41 @@
 # 1. Faça um programa que imprima o seu nome.
 
-# nome = input(f" Digite seu nome:")
-
-# print (nome)
+def Ex1():
+    
+    nome = input(f" Digite seu nome:")
+    print (nome)
 
 # _____________________________________________________________
 
 
 # 2. Faça um programa que imprima o produto dos valores 30 e 27.
 
-# print ("Imprimindo o numero: 30")
-# print ("Imprimindo o numero: 27")
-
+def Ex2():
+    
+    print ("Imprimindo o numero: 30")
+    print ("Imprimindo o numero: 27")
 
 # _____________________________________________________________
 
 
 # 3. Faça um programa que imprima a média aritmética entre os números 5, 8, 12.
 
-# media = (5 + 8 + 12) / 3
+def Ex3():
+    
+    media = (5 + 8 + 12) / 3
 
-# print (f" {media:.2f}")
-
+    print (f" {media:.2f}")
 
 # _____________________________________________________________
 
 
 # 4. Faça um programa que leia e imprima um número inteiro.
 
-# numero = int(input("Digite um numero:"))
+def Ex4():
+    
+    numero = int(input("Digite um numero:"))
 
-# print(numero)
-
+    print(numero)
 
 # _____________________________________________________________
 
@@ -264,7 +268,6 @@ def Ex18():
 
     print(texto)
 
-
 # _____________________________________________________________
 
 # 19. Faça um programa que calcule o valor de uma prestação em atraso.
@@ -285,8 +288,7 @@ def Ex19():
     juros = (c*(i/100)*t)
 
     print(juros+c)
-
-
+    
 # 20. Faça um programa que efetue a apresentação do valor da conversão
 #    em real (R$) de um valor lido em dólar (US$). Para isso, será
 #    necessário também ler o valor da cotação do dólar.
