@@ -102,15 +102,94 @@ def ex05():
 #   bruto. Faça um programa que permita entrar com o salário bruto
 #   e o valor da prestação e informar se o empréstimo pode ou não ser concedido.
 
+def ex06():
+
+    salario = float(input("Informe seu salário: "))
+    prestacao = float(input("Quer pegar um emprestimo? informe o valor da prestação: "))
+
+    ajuste = salario * 0.30
+
+    if (prestacao > salario): 
+
+        print("O emprestimo não poderá ser finalizado pois o valor da prestação é maior que seu salário!")
+
+    elif (prestacao > ajuste):
+
+        print(f"O emprestimo não poderá ser finalizado pois o valor ultrapaça 30% do seu salário!")
+
+    elif (prestacao < ajuste):
+
+        print(f"O emprestimo poderá ser finalizado. Não gasta tudo em cerveja!")
+
+
+# ex06()
+
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
 
+def ex07():
+
+    N1 = int(input("Digite um número: "))
+
+    if (N1>20 and N1<50):
+
+        print("O número está entre 20 e 50")
+
+    else:
+
+        print("O número não está entre 20 e 50")
+
+# ex07()
+
 #8. Faça um programa que leia um número e imprima uma das mensagens:
 #   "Maior do que 20", "Igual a 20"ou "Menor do que 20".
+        
+def ex08():
+
+    N1 = int(input("Digite um número: "))
+
+    if (N1 < 20):
+
+        print("O número é menor que 20")
+
+    elif (N1 == 20):
+
+        print("O número é igual a 20")
+
+    elif (N1 > 20): 
+
+        print("O número é maior que 20")    
+
+# ex08()   
 
 #9. Faça um programa que permita entrar com o ano de nascimento da pessoa e com o
 #   ano atual. O programa deve imprimir a idade da pessoa. Não se esqueça de
 #   verificar se o ano de nascimento informado é válido.
+        
+def ex09():
+
+    import datetime
+
+    while True
+
+        D = (int(input("Digite o dia do seu nascimento (dd/--/----): ")))
+        M = (int(input("Digite o mes do seu nascimento (--/mm/----): ")))
+        A = (int(input("Digite o ano do seu nascimento (--/--/aaaa): ")))
+
+        dia = datetime.date.today().day
+        mes = datetime.date.today().month
+        ano = datetime.date.today().year
+
+        validador =  str(input(f"\n{D}/{M}/{A} - Sua data de nascimento está certa? (S/N): "))
+
+        if (validador == "N") or (validador == "Nao") or (validador == "nao") or (validador == "n"):
+
+
+            
+        elif (validador == "S") or (validador == "Sim") or (validador == "sim") or (validador == "s"):
+
+            while False
+ex09()
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
