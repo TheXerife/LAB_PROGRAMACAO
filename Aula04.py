@@ -168,44 +168,112 @@ def ex08():
         
 def ex09():
 
-    import datetime
+    D = (int(input("Digite o dia do seu nascimento (dd/--/----): ")))
+    M = (int(input("Digite o mes do seu nascimento (--/mm/----): ")))
+    A = (int(input("Digite o ano do seu nascimento (--/--/aaaa): ")))
 
-    while True
+    if (A >= 2024) or (A <= 1000):
 
-        D = (int(input("Digite o dia do seu nascimento (dd/--/----): ")))
-        M = (int(input("Digite o mes do seu nascimento (--/mm/----): ")))
-        A = (int(input("Digite o ano do seu nascimento (--/--/aaaa): ")))
+        print("Data de nascimento inválida!")   
 
-        dia = datetime.date.today().day
-        mes = datetime.date.today().month
-        ano = datetime.date.today().year
+    elif (A > 1000):
 
-        validador =  str(input(f"\n{D}/{M}/{A} - Sua data de nascimento está certa? (S/N): "))
+        idade = float((((2024 - A)*365) - (M*30) - D)/365)
 
-        if (validador == "N") or (validador == "Nao") or (validador == "nao") or (validador == "n"):
+        print(f"Você tem {idade:.1f} anos!")
 
 
-            
-        elif (validador == "S") or (validador == "Sim") or (validador == "sim") or (validador == "s"):
+# ex09()
 
-            while False
-ex09()
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
+        
+def ex10():
+        
+    n1 = int(input("Digite um número: "))
+    n2 = int(input("Digite outro número: "))       
+    n3 = int(input("Digite outro número: ")) 
+
+    lista = [n1, n2, n3]
+    lista.sort()
+
+    print(lista)
+
+
+# ex10()    
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
+    
+def ex11():
+        
+    n1 = int(input("Digite um número: "))
+    n2 = int(input("Digite outro número: "))       
+    n3 = int(input("Digite outro número: "))
+
+    if (n1 > n2) and (n1 > n3):
+
+        print(f"{n1} é o maior numero entre os 3 informado!")
+
+    elif (n2 > n1) and (n2 > n3):
+
+        print(f"{n2} é o maior numero entre os 3 informado!")
+
+    elif (n3 > n1) and (n3 > n1):
+
+        print(f"\n{n3} é o maior numero entre os 3 informado!")
+
+# ex11()
 
 #12. Faça um programa que leia a idade de uma pessoa e informe:
 #• Se é maior de idade
 #• Se é menor de idadea
 #• Se é maior de 65 anos
+        
+def ex12():
+
+    idade = int(input("Digite sua idade: "))
+
+    if (idade > 65):
+
+        print("Você tem mais de 65 anos!")
+
+    elif (idade < 18):
+
+        print("Você é menor de idade!")
+
+    elif (idade > 18):
+
+        print("Você é maior de idade!")
+
+# ex12()    
 
 #13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota
 #da prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1,
 #a nota da prova 2, a média das notas e uma das mensagens: "Aprovado",
 #"Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para
 #reprovação e as demais em prova final).
+        
+def ex13():
+        
+    nome = str(input("Digite seu nome: "))
+    n1 = float(input("Digite o valor de N1: "))
+    n2 = float(input("Digite o valor de N2: "))
+
+    lista = [nome, n1, n2]
+
+    media = float((n1 + n2)/2)
+
+    if (media >= 7):
+        
+        print(f"\n{lista} Média = {media:.2f} Aprovado!")
+
+    else:
+              
+        print(f"\n{lista} Média = {media:.2f} Reprovado!")
+ 
+ex13()
+
 
 #14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
 #desconto do INSS segundo a tabela seguir:
