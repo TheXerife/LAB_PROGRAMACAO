@@ -272,8 +272,7 @@ def ex13():
               
         print(f"\n{lista} Média = {media:.2f} Reprovado!")
  
-ex13()
-
+# ex13()
 
 #14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
 #desconto do INSS segundo a tabela seguir:
@@ -283,9 +282,56 @@ ex13()
 #Maior que R$1200,00 e menor ou igual a R$2000,00 25%
 #Maior que R$2000,00 30%
 
+def ex14():
+
+    salario = float(input("Digite seu salário (R$): "))
+
+    if (salario < 600):
+
+        print(f"\nVocê não tera desconto do INSS! ")
+
+    elif (salario > 600) and (salario < 1200):
+
+        desconto = (salario * 0.20)
+
+        print(f"\nVocê tera 20% ou R${desconto} de desconto do INSS! ")
+
+    elif (salario > 1200) and (salario < 2000):
+
+        desconto = (salario * 0.25)
+
+        print(f"\nVocê tera 25% ou R${desconto} de desconto do INSS! ")
+
+    elif (salario > 2000):
+
+        desconto = (salario * 0.30)
+
+        print(f"\nVocê tera 30% ou R${desconto} de desconto do INSS! ")
+
+# ex14()
+
 #15. Um comerciante comprou um produto e quer vendê-lo com um lucro de 45% se o
 #valor da compra for menor que R$20,00, caso contrário, o lucro será de 30%.
 #Faça um programa que leia o valor do produto e imprima o valor da venda.
+
+
+def ex15():
+
+    compra = float(input("Digite o valor da sua compra (R$): "))
+
+    if (compra < 20):
+
+        valor = ((compra*0.45)+compra)
+
+        print(f"\nSeu produto com 45% de lucro será R${valor}")
+
+    elif (compra > 20):
+
+        valor = ((compra*0.30)+compra)
+
+        print(f"\nSeu produto com 30% de lucro será R${valor}")
+
+# ex15()
 
 #16. A confederação brasileira de natação irá promover eliminatórias para o
 #próximo mundial. Faça um programa que receba a idade de um nadador e imprima
@@ -296,6 +342,15 @@ ex13()
 #Juvenil A 11 - 13 anos
 #Juvenil B 14 - 17 anos
 #Sênior maiores de 18 anos
+
+def ex15():
+
+    
+
+
+
+
+ex16()
 
 #17. Depois da liberação do governo para as mensalidades dos planos de saúde,
 #as pessoas começaram a fazer pesquisas para descobrir um bom plano, não
