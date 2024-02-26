@@ -343,14 +343,39 @@ def ex15():
 #Juvenil B 14 - 17 anos
 #Sênior maiores de 18 anos
 
-def ex15():
+def ex16():
 
-    
+    idade = int(input("Digite sua idade (xx): "))
 
+    if (idade >= 5) and (idade <= 7):
 
+        print("Infantil A")
 
+    elif (idade >= 8) and (idade <= 10):
 
-ex16()
+        print("Infantil B")
+
+    elif (idade >= 11) and (idade <= 13):
+
+        print("Juvenil A")
+
+    elif (idade >= 14) and (idade <= 17):
+
+        print("Juvenil B")
+
+    elif (idade >= 100):
+
+        print("Você não pode participar por ter mais de 100 anos!")        
+
+    elif (idade >= 18): 
+
+        print("Sênior")
+
+    else:
+
+        print("Digite um valor válido para as categorias! ")
+
+# ex16()
 
 #17. Depois da liberação do governo para as mensalidades dos planos de saúde,
 #as pessoas começaram a fazer pesquisas para descobrir um bom plano, não
@@ -364,6 +389,43 @@ ex16()
 #Acima de 45 até 59 anos R$150,00
 #Acima de 59 até 65 anos R$250,00
 #Maior que 65 anos R$400,00
+
+def ex17():
+
+    nome = str(input("Digite seu nome: "))
+    idade = int(input("Digite sua idade (xx): "))
+    saldo = 100
+
+    if (idade <= 10):
+    
+        valor = 30
+
+    elif (idade > 10) and (idade <= 29):
+    
+        valor = 60
+        saldo -= valor
+        
+    elif (idade > 29) and (idade <= 45):
+    
+        valor = 120
+
+    elif (idade > 45) and (idade <= 59):
+    
+        valor = 150
+
+    elif (idade > 59) and (idade <= 65):
+    
+        valor = 250
+
+    elif (idade > 65):
+    
+        valor = 400
+
+    print(f"{nome}, o valor do seu plano será {valor} e será descontado do seu saldo.")
+    print(f"Seu saldo atual é {saldo}")
+
+ex17()      
+
 
 #18. Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês
 #correspondente. Caso o usuário digite um número fora desse intervalo, deverá
@@ -396,6 +458,70 @@ ex16()
 #• Nome do livro:
 #• Tipo de usuário:
 #• Total de dias:
+        
+def ex21():
+
+    print ("Qual a data de hoje?")
+
+    dia = int(input("Digite o dia de hoje (dd/xx/xxxx): "))
+    mes = int(input("Digite o mes (xx/mm/xxxx): "))
+    ano = int(input("Digite o ano (xx/xx/aaaa): "))
+
+    livro = str(input("Digite o nome do livro: "))
+
+    menu = """
+
+    1 - Aluno
+    2 - Professor
+
+    """
+    print (menu)
+
+    escolha = int(input("Digite o tipo do usuário: "))
+
+    if (escolha == 1):  
+    
+        print("Você é um aluno!")
+
+        dia += 3 
+
+        if (dia > 30):
+
+            mes += 1
+            dia -= 30
+
+            if (mes > 12):
+
+                ano += 1 
+                mes -= 12
+
+        print(f"Seu prazo de devolução é {dia}/{mes}/{ano}")
+        
+    elif (escolha == 2): 
+
+        
+        dia += 10
+
+        if (dia > 30):
+
+            mes += 1
+            dia -= 30
+
+            if (mes > 12):
+
+                ano += 1 
+                mes -= 12
+
+        print("Você é um professor!")
+        print(f"Seu prazo de devolução é {dia}/{mes}/{ano}")
+
+    else:
+
+        print("Digite um valor válido!")
+
+
+# ex21()
+
 
 #22. Construa um programa que leia o percurso em quilômetros, o tipo do carro e
 #informe o consumo estimado de combustível, sabendo-se que um carro tipo A faz
@@ -409,12 +535,25 @@ ex16()
 #Peixe 230cal   Sorvete diet 110cal Suco de laranja 70cal
 #Frango 250cal  Mousse diet 170cal  Suco de melão 100cal
 #Carne 350cal   Mousse chocolate 200cal Refrigerante diet 65cal
+        
 
 #24. A polícia rodoviária resolveu fazer cumprir a lei e vistoriar veículos para
 #cobrar dos motoristas o DUT. Sabendo-se que o mês em que o emplacamento do
 #carro deve ser renovado é determinado pelo último número da placa do mesmo,
 #faça um programa que, a partir da leitura da placa do carro, informe o mês
 #em que o emplacamento deve ser renovado.
+    
+# def ex24():
+        
+# LSN4149
+
+#     placa = str(input("Digite sua placa: "))
+#     print(placa)
+
+#     placa.split()
+
+
+# ex24()
 
 #25. A prefeitura contratou uma firma especializada para manter os níveis de
 #poluição considerados ideais para um país do 1º mundo. As indústrias,
