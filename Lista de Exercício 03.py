@@ -7,46 +7,141 @@ Lista de Exercícios referentes a estruturas de iteração (repetição)
 
 def ex01():
 
-    for numero in range(1,101): print(numero)
+    for numero in range(100): print(numero)
 
 #2. Faça um programa que imprima todos os números pares de 100 até 1.
 
 def ex02():
 
-    for numero in range(1,100):
+    for numero in range(100):
 
-        if (numero%2): pass
-        else:print(numero)
+        if (numero % 2): pass
+
+        else:print(_)
 
 #3. Faça um programa que imprima os múltiplos de 5, no intervalo de 1 até 500.
 
 def ex03():   
 
-    for numero in range(1,500):
+    for numero in range(500):
 
-        if (numero): print(numero)
-
-
-ex03()
+        if (numero % 5 == 0): print(numero)
 
 #4. Faça umprograma que permita entrar com o nome, a idade e o sexo de 20
 #pessoas.O programa deve imprimir o nome da pessoa se ela for do sexo masculino
 #e tiver mais de 21 anos.
 
+def ex04():
+
+    for _ in range(20):
+
+        nome = str(input("Digite seu nome: "))
+        idade = int(input("Digite sua idade: "))
+
+        menu_sexo = """
+
+        1 - Masculino
+        2 - Feminino
+
+        """
+
+        print(menu_sexo)
+        sexo = int(input("Escolha a opção que você se identifica: "))
+
+        if sexo == 1: 
+            
+            if (idade > 21):
+
+                sexo = "Masculino"
+                         
+                print(f"Você tem {idade} anos e é do sexo {sexo}")
+
+        elif sexo == 2: sexo = "Feminino"
+
+        else: print("Digite um valor valido!")
+
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
+
+def ex05():
+
+    n1 = int(input("Digite um numero: "))
+    n2 = int(input("Digite um numero: "))
+
+    soma = 0
+
+    for _ in range(10):
+    # while (soma < 500):
+
+        soma += n1 + n2
+
+        print(soma)
+
+ex05()
 
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
 #Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
 #a partir da soma dos anteriores. Exemplo:
 #• 1 + 1 = 2, terceiro termo;
 #• 1 + 2 = 3, quarto termo, etc.
+        
+def ex06():
+
+    fn = 1 
+
+    for _ in range (20):
+
+        print(fn)
+
+        # fn = fn - 1 + fn - 1
+
 
 #7. Crie um programa que permita entrar com o nome, a nota da
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
 #nome, nota da prova 1, nota da prova 2, e média das notas de cada aluno. Ao final,
 #imprimir a média geral da turma.
+        
+def ex07():
+
+    import json
+
+    alunos = {}
+
+    for _ in range(3):
+
+        nome = str(input("Digite seu nome: "))
+        n1 = int(input("Digite a nota da prova 1: "))
+        n2 = int(input("Digite a nota da prova 2: "))
+        media = ((n1 + n2) / 2)
+
+        if (media >= 7):
+
+            final = "Aprovado(a)!"
+
+        else:
+
+            final = "Reprovado(a)!"
+
+        alunos.update({nome: [n1, n2, media, final]})
+
+        nomes = sorted(alunos)
+        
+    for nome in nomes:
+    
+        nome = f"""
+        Aluno: {nome}
+        Nota 1: {n1}
+        Nota 2: {n2}
+        Média: {media} - {final}
+        """
+
+        print (nome)
+
+ex07()
+
+
+
 
 #8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
