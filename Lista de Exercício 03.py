@@ -1,7 +1,6 @@
-'''
-Lista de Exercícios referentes a estruturas de iteração (repetição)
+print ('Funciona!!!')
 
-'''
+import random
 
 #1.Faça um programa que imprima todos os números de 1 até 100.
 
@@ -78,24 +77,16 @@ def ex05():
 
         print(soma)
 
-ex05()
-
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
 #Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
 #a partir da soma dos anteriores. Exemplo:
 #• 1 + 1 = 2, terceiro termo;
 #• 1 + 2 = 3, quarto termo, etc.
         
-def ex06():
+# def ex06():
 
-    fn = 1 
-
-    for _ in range (20):
-
-        print(fn)
-
-        # fn = fn - 1 + fn - 1
-
+    
+        
 
 #7. Crie um programa que permita entrar com o nome, a nota da
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
@@ -104,13 +95,11 @@ def ex06():
         
 def ex07():
 
-    import json
-
     alunos = {}
 
     for _ in range(3):
 
-        nome = str(input("Digite seu nome: "))
+        nome = str(input("\nDigite seu nome: "))
         n1 = int(input("Digite a nota da prova 1: "))
         n2 = int(input("Digite a nota da prova 2: "))
         media = ((n1 + n2) / 2)
@@ -123,26 +112,21 @@ def ex07():
 
             final = "Reprovado(a)!"
 
-        alunos.update({nome: [n1, n2, media, final]})
+        alunos[nome] = [n1, n2, media, final]
 
-        nomes = sorted(alunos)
+    for nome, info in alunos.items():
         
-    for nome in nomes:
-    
-        nome = f"""
+        n1, n2, media, final = info
+        
+        aluno_str = f"""
         Aluno: {nome}
         Nota 1: {n1}
         Nota 2: {n2}
         Média: {media} - {final}
         """
-
-        print (nome)
-
-ex07()
-
-
-
-
+        
+        print(aluno_str)
+        
 #8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
 #calculado conforme a tabela a seguir:
@@ -150,6 +134,26 @@ ex07()
 #Salário menor que R$1300,00 Isento
 #Salário maior ou igual a R$1300,00 e menor que R$2300,00 10% do salário bruto
 #Salário maior ou igual a R$2300,00 15% do salário bruto
+
+def ex08():
+    
+    lista = {}
+      
+    for _ in range(10):
+        
+        nome = str(input("Digite seu nome: "))
+        salario = random.randrange(3000)
+        
+        lista[nome] = salario
+        
+    for nome, salario in lista.items():
+        
+        lista_completa = f"""
+        Nome: {nome}
+        Salário: R${salario},00
+        """
+        
+        print(lista_completa)
 
 #9. No dia da estréia do filme "Procurando Dory", uma grande emissora de TV realizou
 #uma pesquisa logo após o encerramento do filme. Cada espectador respondeu
@@ -161,6 +165,44 @@ ex07()
 #• A percentagem de pessoas que responderam bom entre todos os expectadores
 #analisados.
 
+def ex09():
+    
+    bom = 0
+    regular = 0
+    media_idade = 0
+    
+    for _ in range(200):
+        
+        opniao = random.randrange(1,3)
+        idade = random.randrange(50)
+        media_idade += idade
+        
+        # 1 = Bom
+        # 2 = Regular
+
+        if (opniao == 1):
+
+            bom += 1
+            
+        elif (opniao == 2):
+            
+            regular += 1
+        
+    qtd_pessoas = bom + regular
+    
+    relatorio = f"""
+    
+    {qtd_pessoas} Votos computados foram computados no sistema
+    
+    A idade média das pessoas é de {media_idade/qtd_pessoas} anos.
+    
+    {bom} votaram que o filme foi bom.
+    {regular} votaram que o filme foi regular.
+    
+    """
+    
+    print(relatorio)
+
 #10. Em um campeonato Europeu de Volleyball, se inscreveram 30 países. Sabendo-se
 #que na lista oficial de cada país consta, além de outros dados, peso e idade de 12
 #jogadores, crie um programa que apresente as seguintes informações:
@@ -169,6 +211,54 @@ ex07()
 #• O atleta mais pesado de cada time;
 #• O atleta mais jovem de cada time;
 #• O peso médio e a idade média de todos os participantes.
+
+def 10():
+
+    paises = 
+
+Andorra
+Angola
+Antígua e Barbuda
+Arábia Saudita
+Argélia
+Argentina
+Armênia
+Bangladesh
+Barbados
+Bélgica
+Belize
+Benim
+Camboja
+Canadá
+Qatar
+Cazaquistão
+Chile
+China
+Equador
+Eritreia
+Escócia
+Fiji
+Filipinas
+Finlândia
+França
+Grécia
+Guatemala
+Guiana
+Guiné
+Guiné-Bissau
+Indonésia
+
+
+
+
+
+
+
+
+
+
+
+
 
 #11. Construa um programa que leia vários números e informe quantos números
 #entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
