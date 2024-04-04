@@ -212,62 +212,82 @@ def ex09():
 #• O atleta mais jovem de cada time;
 #• O peso médio e a idade média de todos os participantes.
 
-def 10():
-
-    paises = 
-
-Andorra
-Angola
-Antígua e Barbuda
-Arábia Saudita
-Argélia
-Argentina
-Armênia
-Bangladesh
-Barbados
-Bélgica
-Belize
-Benim
-Camboja
-Canadá
-Qatar
-Cazaquistão
-Chile
-China
-Equador
-Eritreia
-Escócia
-Fiji
-Filipinas
-Finlândia
-França
-Grécia
-Guatemala
-Guiana
-Guiné
-Guiné-Bissau
-Indonésia
-
-
-
-
-
-
-
-
-
-
-
-
 
 #11. Construa um programa que leia vários números e informe quantos números
 #entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
 #deverá cessar sua execução.
 
+def ex11():
+
+    cont = 0
+    valores = 0
+
+    for _ in range(500):
+
+        numero = random.randrange(500)
+        valores += 1
+
+        if (numero == 0): 
+
+            print("Você digitou 0!")
+            break
+
+        else:
+
+            if (numero >= 100) and (numero <= 200):
+
+                cont += 1
+
+        
+    menu = f""" 
+    
+    Foram digitados: {cont} vezes valores entre 100-200!
+    
+    Foram contabilizados {valores} valores
+    
+    """
+
+    print(menu)
+
+
 #12. Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao
 #ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
-#ano, fazer um programa que calcule e imprima o tempo necessário para que a
+#ano e uma mortalidade de 5% no pais A e 8% no pais B, fazer um programa que 
+#calcule e imprima o tempo necessário para que a
 #população do país A ultrapasse a população do país B.
+
+#implemento de 
+
+def ex12():
+
+    pais_a = 5000000 # 3%   #5
+    pais_b = 7000000 # 2%   #8
+    ano = 0
+
+    while (pais_a < pais_b):
+
+        # Aumento populacional devido à taxa de natalidade
+        pais_a += pais_a * 0.03 
+        pais_b += pais_b * 0.02 
+
+        # Aplicação da mortalidade
+        pais_a -= pais_a * 0.05
+        pais_b -= pais_b * 0.08
+
+        ano += 1
+
+
+    menu = f"""
+
+    País A: {pais_a:.2f} habitantes
+    País B: {pais_b:.2f} habitantes
+
+    {ano} anos se passaram!
+
+    """
+
+    print(menu)
+
 
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
 #de consumo. Para cada consumidor, são digitados os seguintes dados:
@@ -282,6 +302,51 @@ Indonésia
 #• O custo total para cada consumidor
 #• O total de consumo para os três tipos de consumidor
 #• Amédia de consumo dos tipos 1 e 2
+
+for _ in range(10,-1,-1):
+
+    num = random.randrange(500)
+    tipo = random.randrange(1,2,3)
+    total = 0
+    kwh = random.randrange(500)
+    meses = 0
+
+    if (tipo == 1):
+
+        kwh += kwh*0.3
+        total += kwh
+        meses += 1  
+
+    elif (tipo == 2):
+
+        kwh += kwh*0.5
+        total += num 
+        meses += 1 
+
+    elif (tipo == 3):
+
+        kwh += kwh*0.7
+        total += num
+        meses += 1 
+
+menu = f"""
+
+Consumo geral: {total} Kwh
+Numero de meses: {meses}
+
+"""
+
+print(menu)
+
+
+
+
+
+
+
+
+
+
 
 #14. Faça um programa que leia vários números inteiros e apresente o fatorial de cada
 #número. O algoritmo encerra quando se digita um número menor do que 1.n
