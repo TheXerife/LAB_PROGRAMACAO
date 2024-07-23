@@ -404,6 +404,35 @@ def ex15():
 #  5 é o Divisor
 #  2 é o Quociente (resultado inteiro da divisão)
 #  0 é o Resto da Divisão
+    
+def ex16():
+
+    dividendo = int(input("Dividendo: "))
+    divisor = int(input("Divisor: "))
+    cont = 0
+
+    if (divisor <= 0):
+
+       dividendo -= divisor
+       cont += 1
+
+       print(f" Dividendo: {dividendo}") 
+       print(f" Soma: {cont}") 
+
+    conta = f"""
+
+{dividendo}/{divisor}
+
+Dividendo: {dividendo}
+Divisor: {divisor}
+Quociente: {quociente}
+Resto da Divisão: {resto}
+
+"""
+
+    print(conta)
+
+ex16()
 
 #17. Crie um programa que possa ler um conjunto de pedidos de compra e
 #calcule o valor total da compra. Cada pedido é composto pelos seguintes campos:
