@@ -1,6 +1,7 @@
 print ('Funciona!!!')
 
 import random
+import math
 
 #1.Faça um programa que imprima todos os números de 1 até 100.
 
@@ -20,7 +21,7 @@ def ex02():
 
 #3. Faça um programa que imprima os múltiplos de 5, no intervalo de 1 até 500.
 
-def ex03():   
+def ex03():
 
     for numero in range(500):
 
@@ -47,12 +48,12 @@ def ex04():
         print(menu_sexo)
         sexo = int(input("Escolha a opção que você se identifica: "))
 
-        if sexo == 1: 
-            
+        if sexo == 1:
+
             if (idade > 21):
 
                 sexo = "Masculino"
-                         
+
                 print(f"Você tem {idade} anos e é do sexo {sexo}")
 
         elif sexo == 2: sexo = "Feminino"
@@ -82,17 +83,17 @@ def ex05():
 #a partir da soma dos anteriores. Exemplo:
 #• 1 + 1 = 2, terceiro termo;
 #• 1 + 2 = 3, quarto termo, etc.
-        
+
 # def ex06():
 
-    
-        
+
+
 
 #7. Crie um programa que permita entrar com o nome, a nota da
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
 #nome, nota da prova 1, nota da prova 2, e média das notas de cada aluno. Ao final,
 #imprimir a média geral da turma.
-        
+
 def ex07():
 
     alunos = {}
@@ -115,18 +116,18 @@ def ex07():
         alunos[nome] = [n1, n2, media, final]
 
     for nome, info in alunos.items():
-        
+
         n1, n2, media, final = info
-        
+
         aluno_str = f"""
         Aluno: {nome}
         Nota 1: {n1}
         Nota 2: {n2}
         Média: {media} - {final}
         """
-        
+
         print(aluno_str)
-        
+
 #8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
 #calculado conforme a tabela a seguir:
@@ -136,23 +137,23 @@ def ex07():
 #Salário maior ou igual a R$2300,00 15% do salário bruto
 
 def ex08():
-    
+
     lista = {}
-      
+
     for _ in range(10):
-        
+
         nome = str(input("Digite seu nome: "))
         salario = random.randrange(3000)
-        
+
         lista[nome] = salario
-        
+
     for nome, salario in lista.items():
-        
+
         lista_completa = f"""
         Nome: {nome}
         Salário: R${salario},00
         """
-        
+
         print(lista_completa)
 
 #9. No dia da estréia do filme "Procurando Dory", uma grande emissora de TV realizou
@@ -166,41 +167,41 @@ def ex08():
 #analisados.
 
 def ex09():
-    
+
     bom = 0
     regular = 0
     media_idade = 0
-    
+
     for _ in range(200):
-        
+
         opniao = random.randrange(1,3)
         idade = random.randrange(50)
         media_idade += idade
-        
+
         # 1 = Bom
         # 2 = Regular
 
         if (opniao == 1):
 
             bom += 1
-            
+
         elif (opniao == 2):
-            
+
             regular += 1
-        
+
     qtd_pessoas = bom + regular
-    
+
     relatorio = f"""
-    
+
     {qtd_pessoas} Votos computados foram computados no sistema
-    
+
     A idade média das pessoas é de {media_idade/qtd_pessoas} anos.
-    
+
     {bom} votaram que o filme foi bom.
     {regular} votaram que o filme foi regular.
-    
+
     """
-    
+
     print(relatorio)
 
 #10. Em um campeonato Europeu de Volleyball, se inscreveram 30 países. Sabendo-se
@@ -211,6 +212,8 @@ def ex09():
 #• O atleta mais pesado de cada time;
 #• O atleta mais jovem de cada time;
 #• O peso médio e a idade média de todos os participantes.
+
+
 
 
 #11. Construa um programa que leia vários números e informe quantos números
@@ -227,7 +230,7 @@ def ex11():
         numero = random.randrange(500)
         valores += 1
 
-        if (numero == 0): 
+        if (numero == 0):
 
             print("Você digitou 0!")
             break
@@ -238,13 +241,13 @@ def ex11():
 
                 cont += 1
 
-        
-    menu = f""" 
-    
+
+    menu = f"""
+
     Foram digitados: {cont} vezes valores entre 100-200!
-    
+
     Foram contabilizados {valores} valores
-    
+
     """
 
     print(menu)
@@ -252,11 +255,11 @@ def ex11():
 
 #12. Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao
 #ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
-#ano e uma mortalidade de 5% no pais A e 8% no pais B, fazer um programa que 
+#ano e uma mortalidade de 5% no pais A e 8% no pais B, fazer um programa que
 #calcule e imprima o tempo necessário para que a
 #população do país A ultrapasse a população do país B.
 
-#implemento de 
+#implemento de
 
 def ex12():
 
@@ -267,8 +270,8 @@ def ex12():
     while (pais_a < pais_b):
 
         # Aumento populacional devido à taxa de natalidade
-        pais_a += pais_a * 0.03 
-        pais_b += pais_b * 0.02 
+        pais_a += pais_a * 0.03
+        pais_b += pais_b * 0.02
 
         # Aplicação da mortalidade
         pais_a -= pais_a * 0.05
@@ -303,58 +306,90 @@ def ex12():
 #• O total de consumo para os três tipos de consumidor
 #• Amédia de consumo dos tipos 1 e 2
 
-for _ in range(10,-1,-1):
+def ex13():
 
-    num = random.randrange(500)
-    tipo = random.randrange(1,2,3)
-    total = 0
-    kwh = random.randrange(500)
-    meses = 0
+    for _ in range(10,-1,-1):
 
-    if (tipo == 1):
+        num = random.randrange(500)
+        tipo = random.randrange(1,2,3)
+        total = 0
+        kwh = random.randrange(500)
+        meses = 0
 
-        kwh += kwh*0.3
-        total += kwh
-        meses += 1  
+        if (tipo == 1):
 
-    elif (tipo == 2):
+            kwh += kwh*0.3
+            total += kwh
+            meses += 1
 
-        kwh += kwh*0.5
-        total += num 
-        meses += 1 
+        elif (tipo == 2):
 
-    elif (tipo == 3):
+            kwh += kwh*0.5
+            total += num
+            meses += 1
 
-        kwh += kwh*0.7
-        total += num
-        meses += 1 
+        elif (tipo == 3):
 
-menu = f"""
+            kwh += kwh*0.7
+            total += num
+            meses += 1
 
-Consumo geral: {total} Kwh
-Numero de meses: {meses}
+    menu = f"""
 
-"""
+    Consumo geral: {total} Kwh
+    Numero de meses: {meses}
 
-print(menu)
+    """
 
-
-
-
-
-
-
-
-
-
+    print(menu)
 
 #14. Faça um programa que leia vários números inteiros e apresente o fatorial de cada
 #número. O algoritmo encerra quando se digita um número menor do que 1.n
+
+def ex14():
+
+    num = int(input("Digite um numero: "))
+    # print (math.factorial(num))
+
+    soma = 1
+
+    for num in range (num, 0, -1):
+
+        soma *= num
+        print(f"Valor de num: {num}")
+        print(f"Valor da Soma: {soma}\n")
 
 #15. Faça um programa que permita entrar com a idade de várias pessoas e
 #imprima:
 #• total de pessoas com menos de 21 anos
 #• total de pessoas com mais de 50 anos
+
+def ex15():
+
+    menor = 0
+    maior = 0
+
+    for _ in range (5):
+                
+        idade = int(input("Digite sua idade: "))
+
+        if (idade<21):
+
+            menor += 1
+
+        elif (idade>50):
+
+            maior += 1
+
+    resultado = f"""
+
+    Pessoas com menos de 21 anos: {menor}
+    Pessoas com mais de 50 anos: {maior}
+    
+    """
+
+    print(resultado)
+
 
 #16. Sabendo-se que a unidade lógica e aritmética calcula a divisão por meio de subtrações
 #sucessivas, criar um algoritmo que calcule e imprima o resto da divisão de
