@@ -407,42 +407,39 @@ def ex15():
     
 def ex16():
 
-    dividendo = int(input("Dividendo: "))
-    divisor = int(input("Divisor: "))
-    cont = 0
+    def res_divisao(dividendo, divisor):
 
-    if (divisor <= 0):
+        resto = dividendo
+        
+        while resto >= divisor:
+            resto = resto - divisor
+        
+        return resto
 
-       dividendo -= divisor
-       cont += 1
+    dividendo = int(input("Digite o dividendo: "))
+    divisor = int(input("Digite o divisor: "))
 
-       print(f" Dividendo: {dividendo}") 
-       print(f" Soma: {cont}") 
+    quociente = dividendo // divisor
+    resto = res_divisao(dividendo, divisor)
 
-    conta = f"""
-
-{dividendo}/{divisor}
-
-Dividendo: {dividendo}
-Divisor: {divisor}
-Quociente: {quociente}
-Resto da Divisão: {resto}
-
-"""
-
-    print(conta)
+    print(f"\n{dividendo}/{divisor}\n")
+    print(f"Dividendo: {dividendo}")
+    print(f"Divisor: {divisor}")
+    print(f"Quociente: {quociente}")
+    print(f"Resto: {resto}")
 
 ex16()
 
 #17. Crie um programa que possa ler um conjunto de pedidos de compra e
 #calcule o valor total da compra. Cada pedido é composto pelos seguintes campos:
 #• número de pedido
-#72 Aula 3. Estruturas de Iteração
 #• data do pedido (dia, mês, ano)
 #• preço unitário
 #• quantidade
 #O programa deverá processar novos pedidos até que o usuário digite 0 (zero)
 #como número do pedido.
+
+
 
 #18. Uma pousada estipulou o preço para a diária em R$30,00 e mais uma taxa de
 #serviços diários de:
