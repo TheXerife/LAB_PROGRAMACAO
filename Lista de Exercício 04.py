@@ -13,9 +13,10 @@ def ex01():
 
     lista = []
 
-    for _ in range (15):
+    for _ in range (10):
 
         lista.append(random.randrange(100))
+        lista.sort()
 
     print(lista)
 
@@ -24,15 +25,16 @@ def ex01():
     if busca in lista:
 
         posicao = lista.index(busca)
+        vezes = lista.count(busca)
 
-        print(f"\nO numero  {busca} foi localizado na posição {posicao+1}\n")
+        print(f"\nO numero {busca} foi localizado na posição {posicao+1}")
+        print(f"Ele apareceu {vezes} vezes\n")
 
     else:
 
         print(f"\nO numero  {busca} não foi localizado!\n")
 
 
-ex01()
 
 #2. Faça um programa que armazene 10 letras em uma lista e imprima uma listagem
 #numerada.
@@ -70,11 +72,81 @@ def ex03():
 #4. Faça um programa que armazene 8 números em uma lista e imprima todos os
 #números. Ao final, imprima o total de números múltiplos de seis.
 
+def ex04():
+
+    lista = []
+
+    for _ in range (8):
+
+        numero = random.randrange(100)
+        lista.append(numero)
+
+        if (numero%6 == 0):
+
+            print(f"{numero} é multiplo de 6")
+    
+    print(lista)
+
 #5. Faça um programa que armazene as notas das provas 1 e 2 de 15 alunos. Calcule
 #e armazene a média arredondada. Armazene também a situação do aluno: 1-
 #Aprovado ou 2-Reprovado. Ao final o programa deve imprimir uma listagem
 #contendo as notas, a média e a situação de cada aluno em formato tabulado.
 #Utilize quantas listas forem necessárias para armazenar os dados.
+
+def ex05():
+
+    avaliacao = []
+
+    for _ in range (2):
+
+        nome = str(input("Digite um nome: "))
+        n1 = random.randrange(11)
+        n2 = random.randrange(11)
+        media = ((n1 + n2) / 2)
+
+        aluno = (nome, n1, n2)
+
+        avaliacao.append(aluno)
+
+        if (media > 7) 
+
+    for _ in avaliacao:
+
+        print(_)
+
+    
+ex05()
+
+#_______________________________________________________________________
+
+def aula():
+
+    lista = ()
+
+    lista = (1,2,3,4,"maria",True, 23.5,[1,2,3])
+    lista[7].clear()
+    lista[7].append(5)
+
+    print(lista)
+
+    matriz = [[1,2,3],[4,5,6],[7,8,9]]
+
+    for _ in matriz:
+
+        print(_)
+
+    a = {1,2,3,4,5,6}
+    b = {2,4,6,7,8}
+
+
+    print(a)
+    print(b)
+    print(a^b)
+    
+
+# aula()
+
+#_______________________________________________________________________
 
 #6. Construa um programa que permita armazenar o salário de 20 pessoas. Calcular
 #e armazenar o novo salário sabendo-se que o reajuste foi de 8%. Imprimir uma
@@ -147,4 +219,4 @@ def ex03():
 #um programa que permita buscar pelo código e imprimir o telefone.
 
 #20. Faça um programa que leia a matrícula e a média de 100 alunos. Ordene da maior
-#para a menor nota e imprima uma relação contendo todas as matrículas e médias.
+#para a menor nota e imprima uma relação contendo todas as matrículas e médias
