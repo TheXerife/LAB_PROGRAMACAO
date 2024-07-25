@@ -15,21 +15,57 @@ def ex01():
 
     for _ in range (15):
 
-        lista.append(int(input("Digite um valor: ")))
+        lista.append(random.randrange(100))
 
-    num = str(input("Digite um valor para buscar: "))
+    print(lista)
 
-    if num 
-        
+    busca = int(input("\nDigite o numero de busca: "))
+
+    if busca in lista:
+
+        posicao = lista.index(busca)
+
+        print(f"\nO numero  {busca} foi localizado na posição {posicao+1}\n")
+
+    else:
+
+        print(f"\nO numero  {busca} não foi localizado!\n")
+
 
 ex01()
-
 
 #2. Faça um programa que armazene 10 letras em uma lista e imprima uma listagem
 #numerada.
 
+def ex02():
+
+    lista = []
+
+    for i in range (10):
+
+        letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+        letra = random.choice(letras)
+        print (f"{i+1}° - {letra}")
+
 #3. Construa uma programa que armazene 15 números em uma lista e imprima
 #uma listagem numerada contendo o número e uma das mensagens: par ou ímpar.
+
+def ex03():
+
+    lista = []
+
+    for i in range (15):
+
+        numero = random.randrange(100)
+
+        if (numero%2 == 0):
+
+            print (f"{i+1}° - {numero} (Par)")
+
+        else:
+
+            print (f"{i+1}° - {numero} - (Impar)")
 
 #4. Faça um programa que armazene 8 números em uma lista e imprima todos os
 #números. Ao final, imprima o total de números múltiplos de seis.
