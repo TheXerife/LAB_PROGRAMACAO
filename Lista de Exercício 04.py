@@ -45,10 +45,12 @@ def ex02():
 
     for i in range (10):
 
-        letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        # letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-        letra = random.choice(letras)
-        print (f"{i+1}° - {letra}")
+        # letra = random.choice(letras)
+
+        lista.append(chr(random.randrange(65,91)))
+        print (f"{i+1}° - {lista[i]}")
 
 #3. Construa uma programa que armazene 15 números em uma lista e imprima
 #uma listagem numerada contendo o número e uma das mensagens: par ou ímpar.
@@ -104,54 +106,50 @@ def ex05():
         n2 = random.randrange(11)
         media = ((n1 + n2) / 2)
 
-        aluno = (nome, n1, n2)
+        if (media > 7):
 
-        avaliacao.append(aluno)
+            situacao = "Aprovado"
 
-        if (media > 7) 
+            aluno = (f"""{nome}  N1: {n1}  N2: {n2} - Média: {media} - {situacao}""")
+
+            avaliacao.append(aluno)
+
+        else: 
+
+            situacao = "Reprovado"
+
+            aluno = (f"{nome} - N1: {n1}  N2: {n2} - Média: {media} - {situacao}")
+
+            avaliacao.append(aluno)
+
 
     for _ in avaliacao:
 
         print(_)
 
-    
-ex05()
-
-#_______________________________________________________________________
-
-def aula():
-
-    lista = ()
-
-    lista = (1,2,3,4,"maria",True, 23.5,[1,2,3])
-    lista[7].clear()
-    lista[7].append(5)
-
-    print(lista)
-
-    matriz = [[1,2,3],[4,5,6],[7,8,9]]
-
-    for _ in matriz:
-
-        print(_)
-
-    a = {1,2,3,4,5,6}
-    b = {2,4,6,7,8}
-
-
-    print(a)
-    print(b)
-    print(a^b)
-    
-
-# aula()
-
-#_______________________________________________________________________
 
 #6. Construa um programa que permita armazenar o salário de 20 pessoas. Calcular
 #e armazenar o novo salário sabendo-se que o reajuste foi de 8%. Imprimir uma
 #listagem numerada com o salário e o novo salário. Declare quantas listas forem
 #necessárias.
+
+def ex06():
+
+    reajuste = 0
+    funcionarios = []
+
+    for i in range (20):
+
+        salario = random.randrange(3000)
+        reajuste = salario + (salario * 0.08) 
+
+        funcionario = (f"{i+1}º - Salário: R${salario} - Salário ajustado: R${reajuste}") 
+
+        funcionarios.append(funcionario)
+
+    for funcionario in funcionarios:
+
+        print(funcionario)
 
 #7. Crie um programa que leia o preço de compra e o preço de venda de 100 mercadorias
 #(utilize listas). Ao final, o programa deverá imprimir quantas mercadorias
@@ -159,6 +157,57 @@ def aula():
 #• lucro < 10%
 #• 10% <= lucro <= 20%
 #• lucro > 20%
+
+def ex07():
+
+
+    produtos = []
+    
+    for _ in range (10):
+        
+        produto = {}
+        preco_compra = random.randrange(100)
+        preco_venda = random.randrange(preco_compra) + preco_compra
+
+        verduras = [
+        "Alface",
+        "Couve",
+        "Espinafre",
+        "Rúcula",
+        "Agrião",
+        "Acelga",
+        "Brócolis",
+        "Coupe-flor",
+        "Repolho",
+        "Chicória",
+        "Mostarda",
+        "Nabo",
+        "Almeirão",
+        "Endívia",
+        "Jiló",
+        "Erva-doce",
+        "Beterraba",
+        "Dente-de-leão",
+        "Rabanete",
+        "Quiabo"
+        ]
+
+        produto["Produto"] = random.choice(verduras)
+        produto["Custo"] = preco_compra
+        produto["Venda"] = preco_venda
+
+        produtos.append(produto)
+
+        busca = random.choice(verduras)
+
+    for produto in produtos:
+
+        if (produto["Produto"] == busca):
+
+            print(produto)
+        
+ex07()
+
 
 #8. Construa um programa que armazene o código, a quantidade, o valor de compra
 #e o valor de venda de 30 produtos. A listagem pode ser de todos os produtos ou
