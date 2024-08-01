@@ -206,13 +206,53 @@ def ex07():
 
             print(produto)
         
-ex07()
-
-
 #8. Construa um programa que armazene o código, a quantidade, o valor de compra
 #e o valor de venda de 30 produtos. A listagem pode ser de todos os produtos ou
 #somente de um ao se digitar o código. Utilize dicionário como estrutura de dados.
-        
+
+
+def ex08():
+
+    
+    item = []
+
+    for _ in range(2):
+
+        itens = {}
+
+
+        codigo = random.randrange(10000)
+        preco_compra = random.randrange(1,100)
+        preco_venda = random.randrange(preco_compra) + preco_compra
+
+        itens["Codigo"] = codigo
+        itens["Custo"] = preco_compra
+        itens["Venda"] = preco_venda
+
+        item.append(itens)
+
+        # A listagem pode ser de todos
+        # print(itens)
+
+    # busca = int(input("Digite o codigo a ser pesquisado: "))
+        print(item)
+    
+
+           
+
+
+
+
+
+
+
+
+
+
+
+
+ex08()
+       
 #9. Faça um programa que leia dois conjuntos de números inteiros, tendo
 #cada um 10 elementos. Ao final o programa deve listar os elementos comuns aos
 #conjuntos.
