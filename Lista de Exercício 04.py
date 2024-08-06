@@ -268,7 +268,54 @@ def ex08():
 
 def ex09():
 
+    def usando_lista():
 
+        conjunto1 = []
+        conjunto2 = []
+
+        for _ in range (10):
+
+            conjunto1.append(random.randrange(100))
+
+        print(conjunto1)
+
+        for _ in range (10):
+
+            conjunto2.append(random.randrange(100))
+
+        print(conjunto2)
+
+        conjunto1 = set(conjunto1)
+        conjunto2 = set(conjunto2)
+
+        repetidos = conjunto1 & conjunto2
+
+        print(repetidos)
+
+    def usando_conjunto():
+
+        conjunto1 = set()
+        conjunto2 = set()
+
+        while len(conjunto1) < 10:
+
+            numero = random.randrange(20)
+            conjunto1.add(numero)
+
+        while len(conjunto2) < 10:
+
+            numero = random.randrange(20)
+            conjunto2.add(numero)
+        
+        print(conjunto1)
+        print(conjunto2)
+
+        repetido = conjunto1 & conjunto2
+
+        print(f" Numeros repetidos: {repetido}")
+
+    # usando_lista()
+    # usando_conjunto()
 
 ex09()
 
