@@ -1,4 +1,6 @@
 import random
+import math
+
 '''
 Lista de Exercícios referentes a coleções em python
 
@@ -162,13 +164,13 @@ def ex07():
 
     itens = []
 
-    for _ in range(5):
+    for _ in range(100):
 
         item = {}
 
         codigo = random.randrange(100000,1000000)
         preco_compra = random.randrange(1,100)
-        preco_venda = random.randrange(preco_compra) + preco_compra + 1
+        preco_venda = random.randrange(preco_compra) + preco_compra + 1 
 
         item["Codigo"] = codigo
         item["Custo"] = preco_compra
@@ -317,12 +319,68 @@ def ex09():
     # usando_lista()
     # usando_conjunto()
 
-ex09()
-
 #10. Faça um programa que leia uma lista com 10 elementos e obtenha outra lista resultado
 #cujos valores são os fatoriais da lista original.
 #Imprimir o maior e o menor, sem ordenar, o percentual de números pares e a
 #média dos elementos da lista.
+
+def ex10():
+
+    lista = []
+    lista_fac = []
+    media_lista = 0
+
+    for item in range (10):
+
+        lista.append(random.randrange(10))
+        media_lista += item
+
+    lista = sorted(lista)
+    print(lista)
+
+    maior = 0
+    menor = 1000000
+    pares = 0
+   
+    media_fac = 0
+
+    for item in lista:
+
+        item = math.factorial(item)
+
+        lista_fac.append(item)
+
+        media_fac += item
+
+        if item > maior:
+
+            maior = item 
+
+        if item < menor:
+
+            menor = item
+
+        if (item % 2 == 0):
+
+            pares += 1 
+
+    lista_fac = sorted(lista_fac)
+
+    print(lista_fac)
+
+    percentual = (pares/10) * 100
+
+    menu = f"""
+Maior: {maior}
+Menor: {menor}
+Pares: {pares} - {percentual}%
+Media dos Inicial: {media_lista}
+Média dos Fatorial: {media_fac}   
+    """
+
+    print(menu)
+
+ex10()
 
 #11. Imprimir o maior e o menor, sem ordenar, o percentual de números pares e a
 #média dos elementos da lista.
