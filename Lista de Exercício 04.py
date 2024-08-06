@@ -135,12 +135,12 @@ def ex05():
 
 def ex06():
 
-    reajuste = 0
     funcionarios = []
 
     for i in range (20):
 
-        salario = random.randrange(3000)
+        reajuste = 0
+        salario = random.randrange(1000,3000)
         reajuste = salario + (salario * 0.08) 
 
         funcionario = (f"{i+1}º - Salário: R${salario} - Salário ajustado: R${reajuste}") 
@@ -160,52 +160,59 @@ def ex06():
 
 def ex07():
 
+    itens = []
 
-    produtos = []
-    
-    for _ in range (10):
-        
-        produto = {}
-        preco_compra = random.randrange(100)
-        preco_venda = random.randrange(preco_compra) + preco_compra
+    for _ in range(5):
 
-        verduras = [
-        "Alface",
-        "Couve",
-        "Espinafre",
-        "Rúcula",
-        "Agrião",
-        "Acelga",
-        "Brócolis",
-        "Coupe-flor",
-        "Repolho",
-        "Chicória",
-        "Mostarda",
-        "Nabo",
-        "Almeirão",
-        "Endívia",
-        "Jiló",
-        "Erva-doce",
-        "Beterraba",
-        "Dente-de-leão",
-        "Rabanete",
-        "Quiabo"
-        ]
+        item = {}
 
-        produto["Produto"] = random.choice(verduras)
-        produto["Custo"] = preco_compra
-        produto["Venda"] = preco_venda
+        codigo = random.randrange(100000,1000000)
+        preco_compra = random.randrange(1,100)
+        preco_venda = random.randrange(preco_compra) + preco_compra + 1
 
-        produtos.append(produto)
+        item["Codigo"] = codigo
+        item["Custo"] = preco_compra
+        item["Venda"] = preco_venda
 
-        busca = random.choice(verduras)
+        itens.append(item)
 
-    for produto in produtos:
+    for item in itens:
 
-        if (produto["Produto"] == busca):
+        print(item)
 
-            print(produto)
-        
+    print("\nProdutos e seus Lucros:\n")
+
+    acima = 0 
+    media = 0
+    baixo = 0
+
+    for item in itens:
+
+        custo = item["Custo"]
+        venda = item["Venda"]
+
+        lucro = venda - custo
+        porcentagem = (lucro/custo) * 100
+
+        print(f"{item["Codigo"]} - Lucro: (R${lucro},00 ou {porcentagem:.2f}%)")
+
+        if porcentagem > 20:
+            acima += 1
+
+        elif porcentagem > 10 and porcentagem < 20:
+            media += 1 
+
+        elif porcentagem < 10:
+            baixo += 1
+
+    menu = f"""
+Acima de 20%: {acima}
+Entre 10% e 20%: {media}
+Abaixo de 10%: {baixo}
+    """
+
+    print(menu)
+       
 #8. Construa um programa que armazene o código, a quantidade, o valor de compra
 #e o valor de venda de 30 produtos. A listagem pode ser de todos os produtos ou
 #somente de um ao se digitar o código. Utilize dicionário como estrutura de dados.
@@ -214,48 +221,56 @@ def ex07():
 def ex08():
 
     
-    item = []
+    itens = []
 
-    for _ in range(2):
+    for _ in range(30):
 
-        itens = {}
+        item = {}
 
-
-        codigo = random.randrange(10000)
+        codigo = random.randrange(100000,1000000)
         preco_compra = random.randrange(1,100)
         preco_venda = random.randrange(preco_compra) + preco_compra
 
-        itens["Codigo"] = codigo
-        itens["Custo"] = preco_compra
-        itens["Venda"] = preco_venda
+        item["Codigo"] = codigo
+        item["Custo"] = preco_compra
+        item["Venda"] = preco_venda
 
-        item.append(itens)
+        itens.append(item)
 
-        # A listagem pode ser de todos
-        # print(itens)
-
-    # busca = int(input("Digite o codigo a ser pesquisado: "))
-        print(item)
     
+    #Caso queria todos os itens da lista:
 
-           
+    for item in itens:
 
+        print(item)
 
+    busca = int(input("Digite o codigo a ser localizado: "))
 
+    encontrado = False
 
+    for item in itens:
 
+        if item["Codigo"] == busca:
 
+            print("Código localizado!")
+            
+            encontrado = True
 
+            break
 
+    if encontrado == False:
 
-
-
-
-ex08()
-       
+        print("Código não localizado!")
+      
 #9. Faça um programa que leia dois conjuntos de números inteiros, tendo
 #cada um 10 elementos. Ao final o programa deve listar os elementos comuns aos
 #conjuntos.
+
+def ex09():
+
+
+
+ex09()
 
 #10. Faça um programa que leia uma lista com 10 elementos e obtenha outra lista resultado
 #cujos valores são os fatoriais da lista original.
