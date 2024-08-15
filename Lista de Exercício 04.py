@@ -380,10 +380,52 @@ Média dos Fatorial: {media_fac}
 
     print(menu)
 
-ex10()
 
 #11. Imprimir o maior e o menor, sem ordenar, o percentual de números pares e a
 #média dos elementos da lista.
+
+def ex11():
+    
+    numeros = []
+    maior = 0
+    menor = 100000
+    par = 0
+    media = 0
+    
+    for numero in range (10): 
+        
+        numero = random.randrange(1000)
+        numeros.append(numero)
+        numeros_ord = sorted(numeros)
+        media += numero
+        
+        if (numero > maior):
+            
+            maior = numero
+            
+        elif (numero < menor):
+            
+            menor = numero
+            
+        if (numero % 2 == 0):
+            
+            par += 1
+            
+    pares = par/10 * 100
+            
+    menu = f"""
+    
+    {numeros}
+    {numeros_ord}
+    
+    Maior: {maior}
+    Menor: {menor}
+    Porcentagem dos numeros pares: {pares}%
+    Média: {media}
+
+    """
+    
+    print(menu)
 
 #12. Crie um programa para gerenciar um sistema de reservas de mesas em uma casa
 #de espetáculo. A casa possui 30 mesas de 5 lugares cada. O programa deverá
@@ -407,6 +449,37 @@ ex10()
 #14. Faça um programa que armazene 50 números inteiros em uma lista. O programa
 #deve gerar e imprimir uma segunda lista em que cada elemento é o quadrado do
 #elemento da primeira lista.
+
+def ex14():
+    
+    numeros = []
+    quad_numeros = []
+    
+    for numero in range (10):
+        
+        numero = random.randrange(10,100)
+        
+        numeros.append(numero)
+        
+    numeros = sorted(numeros)
+    
+    print(f"\n Lista 01\n \n {numeros}")    
+    
+    
+    
+    for numero in numeros:
+        
+        numero = numero * numero
+        
+        quad_numeros.append(numero)
+        
+    quad_numeros = sorted(quad_numeros)
+
+        
+    print(f"\n Lista 02 - quadrado da numero acima\n \n {quad_numeros}\n")      
+        
+    
+ex14()
 
 #15. Faça um programa que leia e armazene vários números, até digitar o número
 #0. Imprimir quantos números iguais ao último número foram lidos. O limite de
