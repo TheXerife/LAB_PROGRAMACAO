@@ -477,13 +477,41 @@ def ex14():
 
         
     print(f"\n Lista 02 - quadrado da numero acima\n \n {quad_numeros}\n")      
-        
-    
-ex14()
 
 #15. Faça um programa que leia e armazene vários números, até digitar o número
 #0. Imprimir quantos números iguais ao último número foram lidos. O limite de
 #números é 100.
+
+def ex15():
+
+    lista = []
+    
+    while True:
+
+        quantidade = 0
+
+        for numero in range(100):
+
+            numero = random.randrange(100)
+
+            if busca in lista:
+
+                busca = lista.index
+
+                if numero == busca:
+
+                    quantidade += 1 
+
+            if (numero == 0):
+
+                break
+
+            if numero == lista[numero -1]:
+
+                print(f"Foram digitados {quantidade} vezes o numero {numero}")
+        
+
+ex15()
 
 #16. Crie um programa para ler um conjunto de 100 números reais e informe:
 #• quantos números lidos são iguais a 30
